@@ -19,6 +19,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.zxr.util.HexDump;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
@@ -179,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
                 Log.e(TAG, Arrays.toString(characteristic.getValue()));
                 Log.e(TAG, bytesToHexString(characteristic.getValue()));
                 //
-
+                Log.e(TAG, HexDump.byteArrToBinStr(characteristic.getValue()));
 
             } else {
                 Log.e(TAG, "onCharacteristicRead fail-->" + status);
@@ -194,6 +196,7 @@ public class MainActivity extends AppCompatActivity implements BluetoothAdapter.
             // 收到的数据
             Log.e(TAG, Arrays.toString(characteristic.getValue()));
             Log.e(TAG, bytesToHexString(characteristic.getValue()));
+
         }
 
         /**
